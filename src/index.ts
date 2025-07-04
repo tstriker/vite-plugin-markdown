@@ -61,8 +61,9 @@ export default (options: PluginOptions): Plugin => {
       content.add(result)
 
       return {
-        code: `${content.export()}\n export default { ${content.variables.join(', ')} }`
+        code: `${content.export()}\n export default { ${content.variables.join(', ')} }`,
         // code: `export default ${JSON.stringify(result)}`,
+        map: null
       }
     }
   }
